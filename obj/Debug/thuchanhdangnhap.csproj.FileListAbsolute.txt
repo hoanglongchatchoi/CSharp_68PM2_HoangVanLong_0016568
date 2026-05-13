@@ -1,0 +1,10 @@
+D:\c++\thuchanhdangnhap\thuchanhdangnhap\bin\Debug\thuchanhdangnhap.exe.config
+D:\c++\thuchanhdangnhap\thuchanhdangnhap\bin\Debug\thuchanhdangnhap.exe
+D:\c++\thuchanhdangnhap\thuchanhdangnhap\bin\Debug\thuchanhdangnhap.pdb
+D:\c++\thuchanhdangnhap\thuchanhdangnhap\obj\Debug\thuchanhdangnhap.csproj.AssemblyReference.cache
+D:\c++\thuchanhdangnhap\thuchanhdangnhap\obj\Debug\thuchanhdangnhap.Form1.resources
+D:\c++\thuchanhdangnhap\thuchanhdangnhap\obj\Debug\thuchanhdangnhap.Properties.Resources.resources
+D:\c++\thuchanhdangnhap\thuchanhdangnhap\obj\Debug\thuchanhdangnhap.csproj.GenerateResource.cache
+D:\c++\thuchanhdangnhap\thuchanhdangnhap\obj\Debug\thuchanhdangnhap.csproj.CoreCompileInputs.cache
+D:\c++\thuchanhdangnhap\thuchanhdangnhap\obj\Debug\thuchanhdangnhap.exe
+D:\c++\thuchanhdangnhap\thuchanhdangnhap\obj\Debug\thuchanhdangnhap.pdb

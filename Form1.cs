@@ -16,5 +16,20 @@ namespace thuchanhdangnhap
         {
             InitializeComponent();
         }
+        private void button1_Click (object sender, EventArgs e)
+        {
+            string taikhoan = "0016568@huce.edu.vn";
+            string matkhau = "0016568";
+            if (textBox1.Text == taikhoan && textBox2.Text == matkhau)
+            {
+                MessageBox.Show("Đăng nhập thành công");
+            }
+            else
+            {
+                MessageBox.Show("Đăng nhập thất bại");
+            }
+            
+        }
     }
 }
+    
