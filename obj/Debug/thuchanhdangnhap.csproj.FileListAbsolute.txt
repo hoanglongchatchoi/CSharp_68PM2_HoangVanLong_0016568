@@ -8,3 +8,4 @@ D:\c++\thuchanhdangnhap\thuchanhdangnhap\obj\Debug\thuchanhdangnhap.csproj.Gener
 D:\c++\thuchanhdangnhap\thuchanhdangnhap\obj\Debug\thuchanhdangnhap.csproj.CoreCompileInputs.cache
 D:\c++\thuchanhdangnhap\thuchanhdangnhap\obj\Debug\thuchanhdangnhap.exe
 D:\c++\thuchanhdangnhap\thuchanhdangnhap\obj\Debug\thuchanhdangnhap.pdb
+D:\c++\thuchanhdangnhap\thuchanhdangnhap\obj\Debug\thuchanhdangnhap.Form2.resources
