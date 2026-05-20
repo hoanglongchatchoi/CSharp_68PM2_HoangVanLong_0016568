@@ -9,3 +9,7 @@ D:\c++\thuchanhdangnhap\thuchanhdangnhap\obj\Debug\thuchanhdangnhap.csproj.CoreC
 D:\c++\thuchanhdangnhap\thuchanhdangnhap\obj\Debug\thuchanhdangnhap.exe
 D:\c++\thuchanhdangnhap\thuchanhdangnhap\obj\Debug\thuchanhdangnhap.pdb
 D:\c++\thuchanhdangnhap\thuchanhdangnhap\obj\Debug\thuchanhdangnhap.Form2.resources
+D:\c++\thuchanhdangnhap\thuchanhdangnhap\obj\Debug\thuchanhdangnhap.Form3.resources
+D:\c++\thuchanhdangnhap\thuchanhdangnhap\obj\Debug\thuchanhdangnhap.mainform.resources
+D:\c++\thuchanhdangnhap\thuchanhdangnhap\obj\Debug\thuchanhdangnhap.UC_QLLH.resources
+D:\c++\thuchanhdangnhap\thuchanhdangnhap\obj\Debug\thuchanhdangnhap.UC_QLSV.resources
