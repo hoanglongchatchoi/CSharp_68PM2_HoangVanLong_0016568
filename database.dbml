@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLSV" Class="databaseDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Table Name="dbo.tbl_lophocs" Member="tbl_lophocs">
+    <Type Name="tbl_lophoc">
+      <Column Name="malop" Type="System.String" DbType="NVarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="tenlop" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ghichu" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Association Name="tbl_lophoc_tbl_sinhvien" Member="tbl_sinhviens" ThisKey="malop" OtherKey="malop" Type="tbl_sinhvien" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_sinhviens" Member="tbl_sinhviens">
+    <Type Name="tbl_sinhvien">
+      <Column Name="id" Type="System.String" DbType="NVarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="hoten" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="gioitinh" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="ngaysinh" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="malop" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_lophoc_tbl_sinhvien" Member="tbl_lophoc" ThisKey="malop" OtherKey="malop" Type="tbl_lophoc" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
