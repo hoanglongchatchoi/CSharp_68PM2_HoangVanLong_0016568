@@ -52,6 +52,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.cbblop = new System.Windows.Forms.ComboBox();
             this.cbbgioitinh = new System.Windows.Forms.ComboBox();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.lblPhantrang = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -77,6 +80,7 @@
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(407, 22);
             this.textBox5.TabIndex = 21;
+            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // label7
             // 
@@ -122,13 +126,15 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 2);
+            this.dataGridView1.Location = new System.Drawing.Point(2, 2);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(907, 535);
+            this.dataGridView1.Size = new System.Drawing.Size(907, 444);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
@@ -184,7 +190,7 @@
             this.panel2.Location = new System.Drawing.Point(445, 103);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(979, 542);
+            this.panel2.Size = new System.Drawing.Size(912, 448);
             this.panel2.TabIndex = 23;
             // 
             // txtMaSV
@@ -300,10 +306,44 @@
             this.cbbgioitinh.TabIndex = 10;
             this.cbbgioitinh.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(738, 591);
+            this.button8.Margin = new System.Windows.Forms.Padding(4);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(60, 60);
+            this.button8.TabIndex = 44;
+            this.button8.Text = "<";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(1052, 591);
+            this.button4.Margin = new System.Windows.Forms.Padding(4);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(60, 60);
+            this.button4.TabIndex = 45;
+            this.button4.Text = ">";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click_1);
+            // 
+            // lblPhantrang
+            // 
+            this.lblPhantrang.AutoSize = true;
+            this.lblPhantrang.Location = new System.Drawing.Point(901, 613);
+            this.lblPhantrang.Name = "lblPhantrang";
+            this.lblPhantrang.Size = new System.Drawing.Size(44, 16);
+            this.lblPhantrang.TabIndex = 46;
+            this.lblPhantrang.Text = "label8";
+            // 
             // UC_QLSV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblPhantrang);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button8);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.label7);
@@ -353,5 +393,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ComboBox cbbgioitinh;
         private System.Windows.Forms.ComboBox cbblop;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label lblPhantrang;
     }
 }

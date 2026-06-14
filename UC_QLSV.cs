@@ -60,7 +60,7 @@ namespace thuchanhdangnhap
             {
                 dataGridView1.ReadOnly = true;
                 dataGridView1.AutoGenerateColumns = true;
-                dataGridView1.DataSource = db.tbl_sinhviens.ToList();
+               LoadDataWithPaging();
                 cbbgioitinh.Items.Add("Nam");
                 cbbgioitinh.Items.Add("Nữ");
                    cbblop.Items.Add("68PM1");
@@ -229,8 +229,62 @@ namespace thuchanhdangnhap
                 MessageBox.Show("loi khi xoa:" + ex.Message);
             }
         }
+
+        int pageNumber = 1;
+        int pageSize = 10;
+        private void LoadDataWithPaging()
+        {
+            try
+            {
+                string keyword = textBox5.Text.Trim();
+                var query = db.tbl_sinhviens.Where(s => s.hoten.Contains(keyword));
+                int totalRecords = query.Count();
+                int totalPages = (int)Math.Ceiling((double)totalRecords / pageSize);
+                if (totalPages == 0) totalPages = 1; 
+
+               
+                if (pageNumber > totalPages) pageNumber = totalPages;
+                if (pageNumber < 1) pageNumber = 1;
+
+                var listPage = query.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToList();
+
+         
+                dataGridView1.DataSource = null;
+                dataGridView1.DataSource = listPage;
+                int currentRecoeds = listPage.Count;
+                lblPhantrang.Text = String.Format("Trang{0}/{1} | {2} ban ghi", pageNumber, totalPages, currentRecoeds);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Loi tai du lieu:" + ex.Message);
+            }
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+            pageNumber = 1;
+            LoadDataWithPaging();
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            
+                pageNumber++;
+                LoadDataWithPaging();
+            
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            if(pageNumber > 1) 
+            { 
+                pageNumber--;
+                LoadDataWithPaging() ;
+            }
+        }
     }
 }
+
 
 
 
