@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -145,7 +147,55 @@ namespace thuchanhdangnhap
 
         }
 
-     
+        private void button4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(txtMaSV.Text))
+                {
+                    MessageBox.Show("Vui long cho 1 sinh vien tu danh sach");
+                    return;
+                }
+
+                var sv = db.tbl_sinhviens.SingleOrDefault(s => s.id == txtMaSV.Text);
+                if (sv != null)
+                {
+                    sv.hoten = txtHoTen.Text;
+                    sv.gioitinh = cbbgioitinh.Text;
+                    sv.ngaysinh = dateTimePicker1.Value;
+                    sv.malop = cbblop.Text;
+                    db.SubmitChanges();
+                    dataGridView1.DataSource = null;
+                    dataGridView1.DataSource = db.tbl_sinhviens.ToList();
+                    MessageBox.Show(" Cap nhap thong tin sinh vien thanh cong");
+                    ClearGroupBoxInputs();
+                }
+                else
+                {
+                    MessageBox.Show("Khong tim thay sinh vien trong he thong");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Loi khi cap nhap:" + ex.Message);
+            } 
+        }
+                    private void ClearGroupBoxInputs()
+                {
+                    txtMaSV.Clear();
+                    txtHoTen.Clear();
+                    cbbgioitinh.SelectedIndex = -1;
+                    cbblop.SelectedIndex = -1;
+                    dateTimePicker1.Value = DateTime.Now;
+
+                    txtMaSV.ReadOnly = false; // Mở khóa lại ô Mã SV
+                    txtMaSV.Focus();
+                }
+        
+
+             }
     }
-    }
+
+
+   
 
