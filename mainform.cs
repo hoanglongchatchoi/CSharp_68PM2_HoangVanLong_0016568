@@ -46,5 +46,14 @@ namespace thuchanhdangnhap
             quảnLýLớpHọcToolStripMenuItem.Font = new Font("Arial", 9, FontStyle.Bold);
             ToolStripMenuItem.Font = new Font("Arial", 9, FontStyle.Regular);
         }
+       
+        public void ChuyenSangTabSinhVienVaLoc(string maLop)
+        {
+            UC_QLSV ucSV = new UC_QLSV();
+            LoadUC(ucSV);
+            ToolStripMenuItem.Font = new Font("Arial", 9, FontStyle.Bold);
+            quảnLýLớpHọcToolStripMenuItem.Font = new Font("Arial", 9, FontStyle.Regular);
+            ucSV.LocSinhVienTheoLopHoc(maLop);
+        }
     }
 }

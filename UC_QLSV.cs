@@ -188,7 +188,7 @@ namespace thuchanhdangnhap
                     cbblop.SelectedIndex = -1;
                     dateTimePicker1.Value = DateTime.Now;
 
-                    txtMaSV.ReadOnly = false; // Mở khóa lại ô Mã SV
+                    txtMaSV.ReadOnly = false; 
                     txtMaSV.Focus();
                 }
 
@@ -280,6 +280,25 @@ namespace thuchanhdangnhap
             { 
                 pageNumber--;
                 LoadDataWithPaging() ;
+            }
+        }
+        
+        public void LocSinhVienTheoLopHoc(string maLop)
+        {
+            try
+            {
+               
+                var danhSachLoc = db.tbl_sinhviens.Where(sv => sv.malop == maLop).ToList();
+
+               
+                dataGridView1.DataSource = danhSachLoc;
+
+               
+                MessageBox.Show("Đang hiển thị danh sách sinh viên thuộc lớp: " + maLop, "Thông báo");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi lọc sinh viên: " + ex.Message);
             }
         }
     }
