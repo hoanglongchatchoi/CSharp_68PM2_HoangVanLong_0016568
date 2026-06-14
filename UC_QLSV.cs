@@ -22,12 +22,31 @@ namespace thuchanhdangnhap
         {
             InitializeComponent();
         }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+          
+            if (e.RowIndex >= 0)
+            {
            
-        }
+                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
 
+         
+                tbl_sinhvien sv = (tbl_sinhvien)row.DataBoundItem;
+
+                if (sv != null)
+                {
+                   
+                    txtMaSV.Text = sv.id;
+                    txtHoTen.Text = sv.hoten;
+                    cbbgioitinh.Text = sv.gioitinh;
+                    cbblop.Text = sv.malop;
+                    dateTimePicker1.Value = sv.ngaysinh;
+
+                  
+                    txtMaSV.ReadOnly = true;
+                }
+            }
+        }
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
@@ -37,12 +56,13 @@ namespace thuchanhdangnhap
         {
             try
             {
+                dataGridView1.ReadOnly = true;
                 dataGridView1.AutoGenerateColumns = true;
                 dataGridView1.DataSource = db.tbl_sinhviens.ToList();
-                comboBox1.Items.Add("Nam");
-                comboBox1.Items.Add("Nữ");
-                   comboBox2.Items.Add("68PM1");
-                comboBox2.Items.Add("68PM2");
+                cbbgioitinh.Items.Add("Nam");
+                cbbgioitinh.Items.Add("Nữ");
+                   cbblop.Items.Add("68PM1");
+                cbblop.Items.Add("68PM2");
 
             }
             catch (Exception ex)
@@ -80,9 +100,9 @@ namespace thuchanhdangnhap
 
                 sv.id = txtMaSV.Text;                 
                 sv.hoten = txtHoTen.Text;                
-                sv.gioitinh = comboBox1.Text;             
+                sv.gioitinh = cbbgioitinh.Text;             
                 sv.ngaysinh = dateTimePicker1.Value;   
-                sv.malop = comboBox2.Text;             
+                sv.malop = cbblop.Text;             
 
                 db.tbl_sinhviens.InsertOnSubmit(sv);
 
@@ -98,9 +118,9 @@ namespace thuchanhdangnhap
                
                 txtMaSV.Clear();
                 txtHoTen.Clear();
-                comboBox2.SelectedIndex = -1;
+                cbblop.SelectedIndex = -1;
 
-                comboBox1.SelectedIndex = -1;
+                cbbgioitinh.SelectedIndex = -1;
 
                 txtMaSV.Focus();
             }
@@ -124,6 +144,8 @@ namespace thuchanhdangnhap
         {
 
         }
+
+     
     }
-}
+    }
 
