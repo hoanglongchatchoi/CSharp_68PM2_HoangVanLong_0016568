@@ -171,7 +171,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(793, 535);
+            this.dataGridView1.Size = new System.Drawing.Size(908, 535);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -312,7 +312,7 @@
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UC_QLLH";
-            this.Size = new System.Drawing.Size(1303, 951);
+            this.Size = new System.Drawing.Size(1409, 951);
             this.Load += new System.EventHandler(this.UC_QLLH_Load_1);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

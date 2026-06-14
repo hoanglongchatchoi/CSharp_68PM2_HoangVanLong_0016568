@@ -174,7 +174,12 @@ namespace thuchanhdangnhap
                     MessageBox.Show("Vui lòng chọn một lớp học từ danh sách để xóa!");
                     return;
                 }
-
+                string maLopCanXoa = txtMaLop.Text.Trim();
+                if(maLopCanXoa.ToUpper() == "LOPTUDO")
+                {
+                    MessageBox.Show("Day la lop danh cho sinh vien tu do", "canh bao"
+                        , MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                }
                 DialogResult dr = MessageBox.Show(
                     "Bạn có chắc muốn xóa lớp học này? Tất cả sinh viên thuộc lớp này sẽ bị hủy liên kết lớp!",
                     "Xác nhận xóa",
@@ -184,25 +189,20 @@ namespace thuchanhdangnhap
 
                 if (dr == DialogResult.Yes)
                 {
-                    string maLopCanXoa = txtMaLop.Text.Trim();
-
-                    // 1. Tìm tất cả các sinh viên đang thuộc lớp học này
+                   
                     var danhSachSV = db.tbl_sinhviens.Where(sv => sv.malop == maLopCanXoa).ToList();
-
-                    // 2. Duyệt qua từng sinh viên và đặt mã lớp của họ về null (Không thuộc lớp nào)
                     foreach (var sv in danhSachSV)
                     {
-                        sv.malop = null;
+                        sv.malop = "LOPTUDO";
                     }
 
-                    // 3. Tìm chính xác lớp học đó để xóa
+            
                     var lh = db.tbl_lophocs.SingleOrDefault(l => l.malop == maLopCanXoa);
                     if (lh != null)
                     {
-                        // Tiến hành xóa lớp học sau khi gỡ hết sinh viên ra
+                      
                         db.tbl_lophocs.DeleteOnSubmit(lh);
 
-                        // Lệnh này sẽ cập nhật cả việc đổi mã lớp sinh viên sang NULL và việc xóa lớp cùng một lúc
                         db.SubmitChanges();
 
                         LoadDataLopHoc();
