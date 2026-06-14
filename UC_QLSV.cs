@@ -191,11 +191,48 @@ namespace thuchanhdangnhap
                     txtMaSV.ReadOnly = false; // Mở khóa lại ô Mã SV
                     txtMaSV.Focus();
                 }
-        
 
-             }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(txtMaSV.Text))
+                {
+                    MessageBox.Show("Vui long chon 1 sinh vien tu danh sach");
+                    return;
+                }
+                DialogResult dr = MessageBox.Show(
+                    "Ban co chac muon xoa sinh vien nay khong",
+                    "Xac nhan xoa",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning);
+                if(dr == DialogResult.Yes)
+                {
+                    var sv = db.tbl_sinhviens.SingleOrDefault(s => s.id == txtMaSV.Text);
+                    if (sv != null)
+                    {
+                        db.tbl_sinhviens.DeleteOnSubmit(sv);
+                        db.SubmitChanges();
+                        dataGridView1.DataSource = null;
+                        dataGridView1.DataSource = db.tbl_sinhviens.ToList();
+                        MessageBox.Show("Xoa sinh vien thanh cong");
+                        ClearGroupBoxInputs();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Khong tim thay sinh vien");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("loi khi xoa:" + ex.Message);
+            }
+        }
     }
+}
 
 
-   
+
+
 
